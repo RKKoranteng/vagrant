@@ -1,8 +1,4 @@
-# General Logs
-logs
-*.log
+# Vagrant files and dir
+backstage\*.log
+.vagrant
 
-# Runtime data
-pids
-*.pid
-*.lock
