@@ -1,5 +1,5 @@
 ## Pre-req
-Before you start the steps below, make sure you have [Vagrant and VirtualBox softwares installed](../README.md#install-softwares)
+Before you start the steps below, make sure you have [Vagrant and VirtualBox softwares installed](../README.md#quickstart)
 
 ## Steps
 Clone the repository: <br />

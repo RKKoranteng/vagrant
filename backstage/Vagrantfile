@@ -5,19 +5,22 @@
 Vagrant.configure("2") do |config|
   # Use Ubuntu 22.04 LTS
   config.vm.box = "ubuntu/jammy64"
+  config.ssh.forward_x11 = true
 
   # Set VM hostname
-  config.vm.hostname = "backstage-vm"
+  config.vm.hostname = "backstage-box"
 
   # Use a dynamic IP for networking
+  #config.vm.network "public_network", guest: 3000, host: 3000, type: "dhcp"
   config.vm.network "forwarded_port", guest: 3000, host: 3000, type: "dhcp"
 
   # Set up VM
   config.vm.provider "virtualbox" do |vb|
-    vb.gui = false             # set to true to launch console
-    vb.name = "backstage-vm"  # Name for the VM in VirtualBox
-    vb.memory = "2096"        # 2GB RAM
-    vb.cpus = 1               # 1 CPU cores
+    vb.gui = true                                     # set to true to launch console
+    vb.name = "backstage-box"                         # Name for the VM in VirtualBox
+    vb.memory = "4096"                                # 4GB RAM
+    vb.customize ["modifyvm", :id, "--vram", "12"]    # assigns 12MB of video RAM to the virtual video card.  The default is 8MB, 
+    vb.cpus = 1                                       # 1 CPU cores
   end  
 
   # Run the external shell script
