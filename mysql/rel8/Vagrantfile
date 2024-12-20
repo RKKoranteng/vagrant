@@ -1,0 +1,22 @@
+# -*- mode: ruby -*-
+# vi: set ft=ruby :
+
+Vagrant.configure("2") do |config|
+  config.vm.box = "generic/rocky8"
+
+  # Set the hostname
+  config.vm.hostname = "mysql-box"
+
+  # Configure networking
+  config.vm.network "forwarded_port", guest: 3306, host: 3306  # MySQL
+
+  # Provider-specific configurations
+  config.vm.provider "virtualbox" do |vb|
+    vb.name = "mysql-box"  # Name the VM in VirtualBox
+    vb.memory = "2048"          # 2GB RAM
+    vb.cpus = 1                 # 1 CPU cores
+  end
+
+  # Provisioning script
+  config.vm.provision "shell", path: "setup-mysql.sh"
+end

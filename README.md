@@ -8,10 +8,8 @@ Just some Vagrant builds I  as my sandbox. Feel free to copy or fork this stuff.
 1. Try out my [Builds](#Builds) 
 
 ## Builds
-* [Spotify Backstage IDP](backstage)
-
-
-
+* [Backstage IDP](backstage)
+* [MySQL](mysql)
 
 ## Cheatsheet
 Here's a guide to create a VM using Vagrant base image

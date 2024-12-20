@@ -1,4 +1,8 @@
-# Vagrant files and dir
-backstage\*.log
+# vagrant db
 .vagrant
 
+# Vagrant files and dir
+backstage\*.log
+
+# mySQL files and dir
+mysql\*.log
