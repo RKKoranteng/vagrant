@@ -46,8 +46,11 @@ echo "Configuring PostgreSQL database..."
 sudo -u postgres psql -c "CREATE USER backstage WITH PASSWORD 'backstage';"
 sudo -u postgres psql -c "CREATE DATABASE backstage OWNER backstage;"
 
-# Installing the XFCE desktop (GUI)
+# Installing the GUI
+#sudo apt-get install -y lubuntu-desktop
 sudo apt-get install -y --no-install-recommends lubuntu-desktop
+sudo apt-get install -y firefox
+
 
 # Set up Backstage
 echo "Setting up Spotify Backstage..."
